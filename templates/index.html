@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}?{% now 'U' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="content">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form-content">
+          <h2>Salesman</h2>
+          {{formSalesman}}
+          <button type="submit" name="send_salesman">Save</button>
+        </div>
+        <div class="form-content">
+          <h2>Sale</h2>
+          {{formSale}}
+          <button type="submit" name="send_sales">Save</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
